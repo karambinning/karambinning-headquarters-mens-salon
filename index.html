@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Headquarters — A men's hair salon on New Bedford Road, Luton. Since 2003.</title>
+<meta name="description" content="Headquarters. A men's hair salon on New Bedford Road, Luton. Open since January 2nd, 2003. Leather sofa, fresh coffee, Sky TV, American Crew and Wella SP.">
+<meta name="theme-color" content="#1F1611">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#E8DDD3;
+    --paper-warm:#EFE3D6;
+    --ink:#1F1611;
+    --mocha:#A47864;
+    --mocha-deep:#6E4B3A;
+    --rule:rgba(31,22,17,.18);
+    --display:"DM Serif Display", "Hoefler Text", Georgia, serif;
+    --body:"DM Sans", ui-sans-serif, system-ui, sans-serif;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:clamp(.95rem,.55rem + .65vw,1.075rem);
+    line-height:1.55;
+    font-feature-settings:"ss01","liga","kern";
+    overflow-x:hidden;
+  }
+
+  /* paper grain */
+  body::before{
+    content:"";
+    position:fixed;inset:0;
+    background-image:
+      radial-gradient(rgba(31,22,17,.045) 1px, transparent 1px),
+      radial-gradient(rgba(31,22,17,.025) 1px, transparent 1px);
+    background-size: 3px 3px, 7px 7px;
+    background-position: 0 0, 1px 1px;
+    pointer-events:none;
+    z-index:1;
+    mix-blend-mode:multiply;
+  }
+
+  h1,h2,h3,h4{font-family:var(--display);font-weight:400;letter-spacing:-.01em;text-wrap:balance;line-height:1}
+  p{text-wrap:pretty;hyphens:auto}
+  a{color:inherit}
+  ::selection{background:var(--ink);color:var(--paper-warm)}
+
+  .wrap{max-width:1320px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem);position:relative;z-index:2}
+
+  /* ---------- NAV ---------- */
+  nav.top{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:1.6rem 0 1.2rem;border-bottom:1px solid var(--rule);
+  }
+  .mark{
+    font-family:var(--display);
+    font-size:1.5rem;letter-spacing:.02em;
+    display:flex;align-items:baseline;gap:.55rem;
+  }
+  .mark small{
+    font-family:var(--body);font-weight:500;font-size:.62rem;
+    letter-spacing:.32em;text-transform:uppercase;color:var(--mocha-deep);
+    transform:translateY(-2px);
+  }
+  nav.top ul{list-style:none;display:flex;gap:1.6rem;align-items:center;font-family:var(--body)}
+  nav.top a{
+    text-decoration:none;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;
+    padding-bottom:2px;border-bottom:1px solid transparent;transition:border-color .25s ease;
+  }
+  nav.top a:hover{border-bottom-color:var(--ink)}
+  @media (max-width:720px){nav.top ul li.hide-sm{display:none}}
+
+  /* ---------- HERO ---------- */
+  header.hero{
+    padding:clamp(2.5rem,7vw,6rem) 0 clamp(2rem,5vw,4rem);
+    position:relative;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+    gap:clamp(1.5rem,4vw,3.5rem);
+    align-items:end;
+  }
+  @media (max-width:880px){.hero-grid{grid-template-columns:1fr;gap:2rem}}
+
+  .monogram{
+    font-family:var(--display);
+    font-size:clamp(11rem,30vw,24rem);
+    line-height:.78;
+    color:var(--mocha-deep);
+    letter-spacing:-.06em;
+    margin-left:-.08em;
+    position:relative;
+  }
+  .monogram em{
+    font-style:italic;
+    color:var(--mocha);
+  }
+  .monogram::after{
+    content:"";
+    display:block;
+    width:65%;height:1px;background:var(--ink);opacity:.35;
+    margin-top:.4rem;
+  }
+
+  .hero-right{
+    padding-bottom:.6rem;
+    display:flex;flex-direction:column;gap:1.4rem;
+  }
+  .eyebrow{
+    font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--mocha-deep);
+    display:flex;align-items:center;gap:.7rem;
+  }
+  .eyebrow .dot{width:5px;height:5px;background:var(--ink);border-radius:50%;display:inline-block}
+  .hero-right h1{
+    font-size:clamp(2.6rem,5.2vw,4.2rem);
+    line-height:1.02;
+  }
+  .hero-right h1 em{color:var(--mocha-deep);font-style:italic}
+  .hero-right .lead{
+    font-size:clamp(1rem,.6rem + .7vw,1.18rem);
+    max-width:34ch;color:#3a2a22;
+  }
+  .find-line{
+    margin-top:.6rem;
+    display:inline-flex;align-items:baseline;gap:.7rem;
+    font-family:var(--display);
+    font-size:1.3rem;
+  }
+  .find-line .arrow{font-family:var(--body);font-weight:500;font-size:1rem}
+  .find-line strong{font-weight:400}
+
+  /* ---------- MARQUEE ---------- */
+  .marquee{
+    overflow:hidden;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    background:var(--paper-warm);
+    --speed:42s;
+    position:relative;z-index:2;
+  }
+  .marquee__track{
+    display:inline-flex;gap:3rem;white-space:nowrap;
+    padding:1.1rem 0;
+    animation:scroll var(--speed) linear infinite;
+    font-family:var(--display);
+    font-size:1.35rem;
+    color:var(--ink);
+  }
+  .marquee__track span{display:inline-flex;align-items:center;gap:3rem}
+  .marquee__track span::after{
+    content:"✦";color:var(--mocha);font-size:.9rem;
+  }
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion: reduce){.marquee__track{animation-duration:0s}}
+
+  /* ---------- SLABS ---------- */
+  section{padding:clamp(3.5rem,8vw,7rem) 0;position:relative;z-index:2}
+  section.dark{background:var(--ink);color:var(--paper-warm)}
+  section.mocha{background:var(--mocha);color:var(--paper-warm)}
+  section.mocha h2, section.mocha h3{color:var(--paper-warm)}
+  section.dark h2{color:var(--paper-warm)}
+
+  .section-head{
+    display:grid;grid-template-columns:auto 1fr;gap:2rem;
+    align-items:baseline;
+    margin-bottom:clamp(2rem,4vw,3.5rem);
+    padding-bottom:1.2rem;
+    border-bottom:1px solid var(--rule);
+  }
+  section.dark .section-head, section.mocha .section-head{border-bottom-color:rgba(232,221,211,.25)}
+  .section-head .num{
+    font-family:var(--display);font-size:1.05rem;color:var(--mocha-deep);
+    letter-spacing:.05em;
+  }
+  section.dark .section-head .num, section.mocha .section-head .num{color:var(--paper-warm);opacity:.55}
+  .section-head h2{
+    font-size:clamp(2.2rem,4.5vw,3.6rem);
+    letter-spacing:-.015em;
+  }
+  .section-head h2 em{font-style:italic;color:var(--mocha-deep)}
+  section.dark .section-head h2 em, section.mocha .section-head h2 em{color:var(--paper)}
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);
+    align-items:start;
+  }
+  @media (max-width:820px){.about-grid{grid-template-columns:1fr}}
+  .about-grid p{
+    font-size:clamp(1.05rem,.6rem + .8vw,1.32rem);
+    line-height:1.55;
+    max-width:38ch;
+  }
+  .about-grid p + p{margin-top:1.2rem}
+  .about-grid p em{font-family:var(--display);font-style:italic;font-size:1.1em;color:var(--mocha-deep)}
+
+  .stat-block{
+    border-left:1px solid var(--rule);
+    padding-left:clamp(1.5rem,3vw,2.5rem);
+    display:flex;flex-direction:column;gap:2rem;
+  }
+  .stat{display:flex;flex-direction:column;gap:.2rem}
+  .stat .k{
+    font-family:var(--display);
+    font-size:clamp(2.4rem,4.5vw,3.6rem);
+    line-height:1;
+    color:var(--ink);
+  }
+  .stat .k em{font-style:italic;color:var(--mocha-deep)}
+  .stat .v{
+    font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--mocha-deep);
+    padding-top:.4rem;
+  }
+
+  /* ---------- THE ROOM ---------- */
+  .room-list{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap:0;
+    border-top:1px solid rgba(232,221,211,.25);
+  }
+  .room-list dl{
+    padding:1.6rem 0;
+    border-bottom:1px solid rgba(232,221,211,.25);
+    display:flex;align-items:baseline;gap:1.2rem;
+    padding-right:2rem;
+  }
+  .room-list dt{
+    font-family:var(--display);
+    font-size:1rem;
+    color:var(--mocha);
+    width:3ch;flex-shrink:0;
+    letter-spacing:.04em;
+  }
+  .room-list dd{
+    font-family:var(--display);
+    font-size:clamp(1.35rem,2.2vw,1.85rem);
+    line-height:1.1;
+  }
+  .room-list dd small{
+    display:block;
+    font-family:var(--body);
+    font-size:.78rem;font-weight:400;
+    letter-spacing:.06em;
+    color:rgba(232,221,211,.65);
+    margin-top:.5rem;
+  }
+
+  /* ---------- SHELF ---------- */
+  .shelf{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:clamp(2rem,4vw,3.5rem);
+    align-items:end;
+  }
+  @media (max-width:820px){.shelf{grid-template-columns:1fr}}
+  .shelf-words p{
+    font-size:clamp(1rem,.55rem + .8vw,1.25rem);
+    max-width:38ch;
+  }
+  .shelf-brands{
+    display:flex;flex-direction:column;
+    border-left:1px solid var(--rule);
+    padding-left:clamp(1.5rem,3vw,2.5rem);
+  }
+  .brand{
+    padding:1.2rem 0;
+    border-bottom:1px solid var(--rule);
+    display:flex;align-items:baseline;justify-content:space-between;gap:1rem;
+  }
+  .brand:last-child{border-bottom:none}
+  .brand .name{
+    font-family:var(--display);
+    font-size:clamp(1.6rem,3vw,2.4rem);
+    letter-spacing:-.01em;
+  }
+  .brand .tag{
+    font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--mocha-deep);
+  }
+
+  /* ---------- FIND ---------- */
+  .find-grid{
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:clamp(2rem,4vw,4rem);
+    align-items:end;
+  }
+  @media (max-width:820px){.find-grid{grid-template-columns:1fr}}
+  .find-grid .address{
+    font-family:var(--display);
+    font-size:clamp(2.2rem,5vw,4.4rem);
+    line-height:1.02;
+  }
+  .find-grid .address em{font-style:italic;color:var(--mocha-deep)}
+  .find-grid .address small{
+    display:block;
+    font-family:var(--body);
+    font-size:.72rem;font-weight:500;
+    letter-spacing:.28em;text-transform:uppercase;
+    color:var(--mocha-deep);
+    margin-top:1.2rem;
+  }
+  .find-card{
+    background:var(--paper-warm);
+    border:1px solid var(--rule);
+    padding:clamp(1.2rem,2.5vw,1.8rem);
+    display:flex;flex-direction:column;gap:1rem;
+  }
+  .find-card h4{
+    font-family:var(--body);font-weight:500;
+    font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;
+    color:var(--mocha-deep);
+  }
+  .find-card .note{
+    font-family:var(--display);font-size:1.25rem;line-height:1.2;
+  }
+  .find-card .note em{color:var(--mocha-deep);font-style:italic}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--ink);color:var(--paper);
+    padding:clamp(3rem,6vw,5rem) 0 2rem;
+    position:relative;z-index:2;
+  }
+  .foot-grid{
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    gap:clamp(2rem,4vw,4rem);
+    align-items:end;
+  }
+  @media (max-width:760px){
+    .foot-grid{grid-template-columns:1fr;align-items:start}
+  }
+  .foot-mark{
+    font-family:var(--display);
+    font-size:clamp(3rem,8vw,6rem);
+    line-height:.85;
+    letter-spacing:-.03em;
+  }
+  .foot-mark em{font-style:italic;color:var(--mocha)}
+  .foot-letter{
+    font-family:var(--display);
+    font-size:clamp(1.1rem,1.6vw,1.4rem);
+    line-height:1.35;
+    color:var(--paper);
+    max-width:32ch;
+  }
+  .foot-letter strong{color:var(--paper);font-weight:400}
+  .foot-letter span.dim{color:rgba(245,238,220,.55)}
+  .foot-meta{
+    font-family:var(--body);
+    font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;
+    color:rgba(245,238,220,.5);
+    text-align:right;
+    line-height:1.7;
+  }
+  @media (max-width:760px){.foot-meta{text-align:left}}
+  .rule-h{
+    height:1px;background:rgba(245,238,220,.18);
+    margin:2.4rem 0 1.4rem;
+  }
+  .credit{
+    font-family:var(--body);
+    font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;
+    color:rgba(245,238,220,.45);
+    display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  }
+
+  /* ---------- SCROLL REVEALS ---------- */
+  @supports (animation-timeline: view()){
+    .reveal{
+      animation:rise both;
+      animation-timeline:view();
+      animation-range: entry 0% cover 28%;
+    }
+    @keyframes rise{
+      from{opacity:0;transform:translateY(2rem)}
+      to{opacity:1;transform:translateY(0)}
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal{animation:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav class="top">
+    <div class="mark">Headquarters <small>Est. 2003</small></div>
+    <ul>
+      <li><a href="#room">The Room</a></li>
+      <li class="hide-sm"><a href="#shelf">The Shelf</a></li>
+      <li><a href="#find">Find Us</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-grid">
+      <div class="monogram" aria-hidden="true">H<em>Q</em></div>
+      <div class="hero-right">
+        <div class="eyebrow"><span class="dot"></span> A men's hair salon · Luton, Bedfordshire</div>
+        <h1>A quiet chair on New&nbsp;Bedford&nbsp;Road,&nbsp;<em>since the 2nd of January, 2003.</em></h1>
+        <p class="lead">A distinguished men's hair and grooming room. Designed properly. Run unhurriedly. Air-conditioned in the summer, well-lit in the winter, and warmly familiar regardless of the month you walk in.</p>
+        <div class="find-line"><span class="arrow">→</span><strong>New Bedford Road, Luton.</strong></div>
+      </div>
+    </div>
+  </header>
+</div>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Established 2003</span>
+    <span>New Bedford Road</span>
+    <span>Luton, Bedfordshire</span>
+    <span>Men's hair &amp; grooming</span>
+    <span>American Crew</span>
+    <span>Wella SP</span>
+    <span>Established 2003</span>
+    <span>New Bedford Road</span>
+    <span>Luton, Bedfordshire</span>
+    <span>Men's hair &amp; grooming</span>
+    <span>American Crew</span>
+    <span>Wella SP</span>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">01 /</div>
+      <h2>The cut, <em>unhurried.</em></h2>
+    </div>
+    <div class="about-grid reveal">
+      <div>
+        <p>Headquarters opened its doors on the <em>2nd of January, 2003.</em> The room was professionally designed before the first appointment was taken, and twenty‑three years on it has been kept that way: clean, considered, and quietly proud of itself.</p>
+        <p>The work is straightforward — men's hair, cut by people who know how to cut it. The pace is the part most worth advertising. There is no clock on the wall asking you to hurry. There is, however, a leather sofa, fresh coffee, and Sky on the television if you would rather wait than rush.</p>
+      </div>
+      <div class="stat-block">
+        <div class="stat"><span class="k"><em>23</em></span><span class="v">Years on this street</span></div>
+        <div class="stat"><span class="k">02·01·<em>03</em></span><span class="v">First appointment taken</span></div>
+        <div class="stat"><span class="k">01</span><span class="v">Address. New Bedford Road.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="room" class="dark">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">02 /</div>
+      <h2>The room, <em>furnished.</em></h2>
+    </div>
+    <div class="room-list reveal" role="list">
+      <dl role="listitem"><dt>i.</dt><dd>A bespoke leather sofa<small>Built in. Broken in.</small></dd></dl>
+      <dl role="listitem"><dt>ii.</dt><dd>Fresh coffee<small>Made when asked.</small></dd></dl>
+      <dl role="listitem"><dt>iii.</dt><dd>Sky on the screen<small>Saturday afternoons, particularly.</small></dd></dl>
+      <dl role="listitem"><dt>iv.</dt><dd>A stack of magazines<small>Restocked, not curated.</small></dd></dl>
+      <dl role="listitem"><dt>v.</dt><dd>Air-conditioned all year<small>Cool in July. Warm in February.</small></dd></dl>
+      <dl role="listitem"><dt>vi.</dt><dd>A clean shelf<small>Two brands. Both proper.</small></dd></dl>
+    </div>
+  </div>
+</section>
+
+<section id="shelf" class="mocha">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">03 /</div>
+      <h2>The shelf is <em>brief on purpose.</em></h2>
+    </div>
+    <div class="shelf reveal">
+      <div class="shelf-words">
+        <p>Two product houses, both of them good. American Crew for hold and finish. Wella SP for shampoos, conditioners and the things you want a barber's wife to use too.</p>
+        <p>No fifteen‑bottle wall. No private‑label gimmickry. The shelf is brief on purpose — what is stocked is stocked because we use it on the chair.</p>
+      </div>
+      <div class="shelf-brands">
+        <div class="brand"><span class="name">American Crew</span><span class="tag">Hold · Finish</span></div>
+        <div class="brand"><span class="name">Wella <em style="font-style:italic">SP</em></span><span class="tag">Wash · Care</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="find">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">04 /</div>
+      <h2>Find us, <em>on foot.</em></h2>
+    </div>
+    <div class="find-grid reveal">
+      <div class="address">
+        New&nbsp;Bedford<br>
+        <em>Road,</em><br>
+        Luton.
+        <small>Bedfordshire · Established 2003</small>
+      </div>
+      <aside class="find-card">
+        <h4>A note before you visit</h4>
+        <p class="note">Opening hours and current booking details are <em>best confirmed in person</em> at the salon. We will publish them here once the present hours are reconfirmed.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-mark">H<em>Q</em></div>
+      <div class="foot-letter">
+        <strong>Headquarters</strong> — <span class="dim">a men's hair salon on New&nbsp;Bedford&nbsp;Road, Luton. Open, in one form or another, since the 2nd of January, 2003. The chair, the sofa, and the coffee are all still here.</span>
+      </div>
+      <div class="foot-meta">
+        New Bedford Road<br>
+        Luton, Bedfordshire<br>
+        Est. 2003
+      </div>
+    </div>
+    <div class="rule-h"></div>
+    <div class="credit">
+      <span>© Headquarters Men's Hair Salon, Luton</span>
+      <span>Site, in draft.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
